@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92c1ebb8-f2fb-4379-9893-67538f31336d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Properties_Fetching/Get_Specific_Details.py" beforeDir="false" afterPath="$PROJECT_DIR$/Properties_Fetching/Get_Specific_Details.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Properties_Fetching/Logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/Properties_Fetching/Logs.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +31,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Generate_Ingestion_Files/IngestionFile_and_delimiterconfig_mapping.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />

@@ -1,10 +1,12 @@
-2022-06-10 15:56:58,558 GetSpecificDetails - INFO - Into the func GetSpecificDetails
-2022-06-10 15:56:58,562 FetchProperties - INFO - Inside the Constructor of FetchProperties
-2022-06-10 15:56:58,565 FetchProperties - INFO - The parameters are url=http://naapi2.bidgely.com, pilotid=40002, access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65,uuid=,property_type=PropertyTypes.PilotConfigs
-2022-06-10 15:56:58,565 FetchProperties - INFO - In the Function GetUrls and URl = http://naapi2.bidgely.com/entities/pilot/40002/configs
-2022-06-10 15:56:58,565 FetchProperties - INFO - In the Function GetParams and Params = {'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65'}
-2022-06-10 15:56:58,565 FetchApiResponse - INFO - Inside the Constructor Function of FetchApiResponse and Args are url=http://naapi2.bidgely.com/entities/pilot/40002/configs, params={'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65'}
-2022-06-10 15:56:58,605 urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): naapi2.bidgely.com:80
-2022-06-10 15:56:59,102 urllib3.connectionpool - DEBUG - http://naapi2.bidgely.com:80 "GET /entities/pilot/40002/configs?access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65 HTTP/1.1" 200 None
-2022-06-10 15:56:59,328 FetchApiResponse - INFO - Fetching the api Response of http://naapi2.bidgely.com/entities/pilot/40002/configs?access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65
-2022-06-10 15:56:59,339 GetSpecificDetails - INFO - The o/p from the function Get_Data_columns of columns = ['customer_id', 'account_id', 'premise_id', 'user_segment', 'email_id', 'first_name', 'last_name', 'address_1', 'address_2', 'address_3', 'address_4', 'city', 'state', 'postal_code', 'region_code', 'mailing_address_1', 'mailing_address_2', 'mailing_address_3', 'mailing_address_4', 'mailing_city', 'mailing_state', 'mailing_postal_code', 'phone_number', 'phone_type', 'language_preference', 'consent_status', 'unsubscribe_notifications', 'unv_sdp', 'service_type', 'service_start_date', 'service_end_date', 'rate_plan_id', 'rate_plan_effective_date', 'billing_cycle_code', 'billing_cycle_effective_date', 'solar_user', 'meter_type', 'label']
+2022-06-10 19:18:08,744 GetSpecificDetails - INFO - Into the func GetSpecificDetails
+2022-06-10 19:18:08,745 GetSpecificDetails - INFO - Into the Function Get_Data_columns for Env_Variables={'url': 'http://naapi2.bidgely.com', 'pilotid': '40003', 'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'} and File_Creation_type=IngestionFileType.InvoiceFile
+2022-06-10 19:18:08,745 GetSpecificDetails - INFO - Into the Function Pilot_Configs for Env_Variables={'url': 'http://naapi2.bidgely.com', 'pilotid': '40003', 'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
+2022-06-10 19:18:08,745 FetchProperties - INFO - Inside the Constructor of FetchProperties
+2022-06-10 19:18:08,745 FetchProperties - INFO - The parameters are url=http://naapi2.bidgely.com, pilotid=40003, access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65,uuid=7c2b7a79-ec13-497b-9c4d-a3c5fe302264,property_type=PropertyTypes.PilotConfigs
+2022-06-10 19:18:08,746 FetchProperties - INFO - In the Function GetUrls and URl = http://naapi2.bidgely.com/entities/pilot/40003/configs
+2022-06-10 19:18:08,746 FetchProperties - INFO - In the Function GetParams and Params = {'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65'}
+2022-06-10 19:18:08,746 FetchApiResponse - INFO - Inside the Constructor Function of FetchApiResponse and Args are url=http://naapi2.bidgely.com/entities/pilot/40003/configs, params={'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65'}
+2022-06-10 19:18:08,768 urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): naapi2.bidgely.com:80
+2022-06-10 19:18:09,336 urllib3.connectionpool - DEBUG - http://naapi2.bidgely.com:80 "GET /entities/pilot/40003/configs?access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65 HTTP/1.1" 200 None
+2022-06-10 19:18:09,647 FetchApiResponse - INFO - Fetching the api Response of http://naapi2.bidgely.com/entities/pilot/40003/configs?access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65
+2022-06-10 19:18:09,654 GetSpecificDetails - INFO - The file type = IngestionFileType.InvoiceFile and config=invoice_parser_delimiter

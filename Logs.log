@@ -1,0 +1,10 @@
+2022-06-10 16:39:54,123 GetSpecificDetails - INFO - Into the func GetSpecificDetails
+2022-06-10 16:39:54,124 FetchProperties - INFO - Inside the Constructor of FetchProperties
+2022-06-10 16:39:54,125 FetchProperties - INFO - The parameters are url=https://nspuatapi.bidgely.com, pilotid=40003, access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438,uuid=,property_type=PropertyTypes.PilotConfigs
+2022-06-10 16:39:54,125 FetchProperties - INFO - In the Function GetUrls and URl = https://nspuatapi.bidgely.com/entities/pilot/40003/configs
+2022-06-10 16:39:54,125 FetchProperties - INFO - In the Function GetParams and Params = {'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
+2022-06-10 16:39:54,126 FetchApiResponse - INFO - Inside the Constructor Function of FetchApiResponse and Args are url=https://nspuatapi.bidgely.com/entities/pilot/40003/configs, params={'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
+2022-06-10 16:39:54,335 urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): nspuatapi.bidgely.com:443
+2022-06-10 16:39:55,454 urllib3.connectionpool - DEBUG - https://nspuatapi.bidgely.com:443 "GET /entities/pilot/40003/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438 HTTP/1.1" 200 None
+2022-06-10 16:39:55,698 FetchApiResponse - INFO - Fetching the api Response of https://nspuatapi.bidgely.com/entities/pilot/40003/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438
+2022-06-10 16:39:55,712 GetSpecificDetails - INFO - The o/p from the function Get_Data_columns of columns = ['customer_id', 'account_id', 'premise_id', 'user_segment', 'email_id', 'first_name', 'last_name', 'address_1', 'address_2', 'address_3', 'address_4', 'city', 'state', 'postal_code', 'region_code', 'mailing_address_1', 'mailing_address_2', 'mailing_address_3', 'mailing_address_4', 'mailing_city', 'mailing_state', 'mailing_postal_code', 'phone_number', 'phone_type', 'language_preference', 'consent_status', 'unsubscribe_notifications', 'unv_sdp', 'service_type', 'service_start_date', 'service_end_date', 'rate_plan_id', 'rate_plan_effective_date', 'billing_cycle_code', 'billing_cycle_effective_date', 'solar_user', 'meter_type', 'label']
