@@ -22,8 +22,8 @@ enrollment_file_prefix = 'USERENROLL_D_'
 raw_file_prefix = 'RAW_D_'
 invoice_file_prefix = 'INVOICE_'
 delimiter = '|'
-columnNames = ['customer_id','account_id','premise_id','user_segment','email_id','first_name','last_name','address_1','address_2','address_3','address_4','city','state','postal_code','region_code','mailing_address_1','mailing_address_2','mailing_address_3','mailing_address_4','mailing_city','mailing_state','mailing_postal_code','phone_number','phone_type','language_preference','consent_status','unsubscribe_notifications','unv_sdp','service_type','service_start_date','service_end_date','rate_plan_id','rate_plan_effective_date','billing_cycle_code','billing_cycle_effective_date','solar_user','meter_type','label']
-columnValues = ['08906632','02005890','97890','RES','sarvesh+RES8904206765@gmail.com','Sarvesh','Kulkarni','RESMAX01 PAYNE','COMBINED SERVICE ADDRESS','UAT2A01','','','UAT2A01 BEAVER BANK','NS','B3J 3S8','NS','','MAILING ADDRESS LINE 2','MAILING ADDRESS LINE 3','','','B3J 3S8','1234567890','HOME','EN','','','','','ELECTRIC','1975-06-17','','02B','','33','','false','AMI']
+columnNames = enrolement_json.Get_Data_columns(obj_dic)
+columnValues = ['08906632','02005890','97890','RES','sarvesh+RES8904206765@gmail.com','Sarvesh','Kulkarni','RESMAX01 PAYNE','COMBINED SERVICE ADDRESS','UAT2A01','','','UAT2A01 BEAVER BANK','NS','B3J 3S8','NS','','MAILING ADDRESS LINE 2','MAILING ADDRESS LINE 3','','','B3J 3S8','1234567890','HOME','EN','Test','Test','Test','Test','ELECTRIC','1975-06-17','','02B','','33','gu',false,'AMI']
 
 def createIngestionFiles():
     timestamp = datetime.now().strftime("%Y_%m_%d-%I%M%S")
