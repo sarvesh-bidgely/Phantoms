@@ -11,9 +11,9 @@ from Properties_Fetching import Get_Specific_Details
 from datetime import datetime
 enrolement_json = Get_Specific_Details.GetSpecificDetails()
 obj_dic = {
-    url:'nspuatapi.bidgely.com',
-    pilotid:'40003',
-    access_token:'56b02db5-b83c-4c5c-b75d-3b6eaee03438'
+    "url":'https://nspuatapi.bidgely.com',
+    "pilotid":'40003',
+    "access_token":'56b02db5-b83c-4c5c-b75d-3b6eaee03438'
 }
 print(enrolement_json.Get_Data_columns(obj_dic))
 

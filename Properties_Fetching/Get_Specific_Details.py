@@ -2,7 +2,7 @@ import logging
 import json
 
 from Properties_Fetching import Property_Types_Enum
-from Fetch_properties import FetchProperties
+from Properties_Fetching import Fetch_properties
 
 class GetSpecificDetails:
     def __init__(self):
@@ -20,7 +20,7 @@ class GetSpecificDetails:
             access_token=Env_Variables["access_token"]
             property_type=Property_Types_Enum.PropertyTypes.PilotConfigs
             uuid = Env_Variables.get("uuid", "")
-            self.fetch_prop=FetchProperties(url, pilotid, access_token, property_type, uuid)
+            self.fetch_prop=Fetch_properties.FetchProperties(url, pilotid, access_token, property_type, uuid)
         except KeyError:
             raise KeyError(f"The keys passed in the dict {Env_Variables} is missing the expeceted keys")
 
