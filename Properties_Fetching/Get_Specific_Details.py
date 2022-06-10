@@ -64,7 +64,7 @@ class GetSpecificDetails:
         return(result)
 
     def Get_Delimiter(self,Env_Variables,File_Creation_type):
-        self.log.info(f"Into the Function Get_Data_columns for Env_Variables={Env_Variables} and File_Creation_type={File_Creation_type}")
+        self.log.info(f"Into the Function Get_Delimiter for Env_Variables={Env_Variables} and File_Creation_type={File_Creation_type}")
         pilot_configs=self.Get_Pilot_Configs(Env_Variables)
 
         IfiledelMap=IngestionFileDelimiterConfigMapping(File_Creation_type)
@@ -79,7 +79,22 @@ class GetSpecificDetails:
                 self.log.info(f"The Delimiter={delimiter_config_val}")
                 return delimiter_config_val
 
+    def Get_S3BucketName(self,Env_Variables):
+        self.log.info(f"Into the Function S3BucketName for Env_Variables={Env_Variables}")
+        pilot_configs=self.Get_Pilot_Configs(Env_Variables)
+
+        pilot_configs = pilot_configs.get("data_ingestion")
+        #print(pilot_configs)
+        pilot_configs = json.loads(pilot_configs).get("kvs")
+
+        for item in pilot_configs:
+            #print (item)
+            if item.get("key").casefold()=="s3BucketName".casefold():
+                s3BucketName=str(item.get("val"))
+                self.log.info(f"The s3BucketName={s3BucketName}")
+                return s3BucketName
+
 # if __name__ == '__main__':
-#     d={"url":"http://naapi2.bidgely.com","pilotid":str(40003),"access_token":"595b8e91-3753-4826-9a46-bbd9d74b3f65","uuid":"7c2b7a79-ec13-497b-9c4d-a3c5fe302264"}
+#     d={"url":"http://nspuatapi.bidgely.com","pilotid":str(40003),"access_token":"56b02db5-b83c-4c5c-b75d-3b6eaee03438","uuid":"7c2b7a79-ec13-497b-9c4d-a3c5fe302264"}
 #     f=GetSpecificDetails()
-#     print (f.Get_Delimiter(d,IngestionFileType.InvoiceFile))
+#     print (f.Get_S3BucketName(d))

@@ -1,12 +1,12 @@
-2022-06-10 19:18:08,744 GetSpecificDetails - INFO - Into the func GetSpecificDetails
-2022-06-10 19:18:08,745 GetSpecificDetails - INFO - Into the Function Get_Data_columns for Env_Variables={'url': 'http://naapi2.bidgely.com', 'pilotid': '40003', 'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'} and File_Creation_type=IngestionFileType.InvoiceFile
-2022-06-10 19:18:08,745 GetSpecificDetails - INFO - Into the Function Pilot_Configs for Env_Variables={'url': 'http://naapi2.bidgely.com', 'pilotid': '40003', 'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
-2022-06-10 19:18:08,745 FetchProperties - INFO - Inside the Constructor of FetchProperties
-2022-06-10 19:18:08,745 FetchProperties - INFO - The parameters are url=http://naapi2.bidgely.com, pilotid=40003, access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65,uuid=7c2b7a79-ec13-497b-9c4d-a3c5fe302264,property_type=PropertyTypes.PilotConfigs
-2022-06-10 19:18:08,746 FetchProperties - INFO - In the Function GetUrls and URl = http://naapi2.bidgely.com/entities/pilot/40003/configs
-2022-06-10 19:18:08,746 FetchProperties - INFO - In the Function GetParams and Params = {'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65'}
-2022-06-10 19:18:08,746 FetchApiResponse - INFO - Inside the Constructor Function of FetchApiResponse and Args are url=http://naapi2.bidgely.com/entities/pilot/40003/configs, params={'access_token': '595b8e91-3753-4826-9a46-bbd9d74b3f65'}
-2022-06-10 19:18:08,768 urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): naapi2.bidgely.com:80
-2022-06-10 19:18:09,336 urllib3.connectionpool - DEBUG - http://naapi2.bidgely.com:80 "GET /entities/pilot/40003/configs?access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65 HTTP/1.1" 200 None
-2022-06-10 19:18:09,647 FetchApiResponse - INFO - Fetching the api Response of http://naapi2.bidgely.com/entities/pilot/40003/configs?access_token=595b8e91-3753-4826-9a46-bbd9d74b3f65
-2022-06-10 19:18:09,654 GetSpecificDetails - INFO - The file type = IngestionFileType.InvoiceFile and config=invoice_parser_delimiter
+2022-06-10 20:18:22,420 GetSpecificDetails - INFO - Into the func GetSpecificDetails
+2022-06-10 20:18:22,421 GetSpecificDetails - INFO - Into the Function S3BucketName for Env_Variables={'url': 'http://nspuatapi.bidgely.com', 'pilotid': '40003', 'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
+2022-06-10 20:18:22,421 GetSpecificDetails - INFO - Into the Function Pilot_Configs for Env_Variables={'url': 'http://nspuatapi.bidgely.com', 'pilotid': '40003', 'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
+2022-06-10 20:18:22,422 FetchProperties - INFO - Inside the Constructor of FetchProperties
+2022-06-10 20:18:22,422 FetchProperties - INFO - The parameters are url=http://nspuatapi.bidgely.com, pilotid=40003, access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438,uuid=7c2b7a79-ec13-497b-9c4d-a3c5fe302264,property_type=PropertyTypes.PilotConfigs
+2022-06-10 20:18:22,423 FetchProperties - INFO - In the Function GetUrls and URl = http://nspuatapi.bidgely.com/entities/pilot/40003/configs
+2022-06-10 20:18:22,423 FetchProperties - INFO - In the Function GetParams and Params = {'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
+2022-06-10 20:18:22,423 FetchApiResponse - INFO - Inside the Constructor Function of FetchApiResponse and Args are url=http://nspuatapi.bidgely.com/entities/pilot/40003/configs, params={'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
+2022-06-10 20:18:22,459 urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): nspuatapi.bidgely.com:80
+2022-06-10 20:18:22,996 urllib3.connectionpool - DEBUG - http://nspuatapi.bidgely.com:80 "GET /entities/pilot/40003/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438 HTTP/1.1" 200 None
+2022-06-10 20:18:23,273 FetchApiResponse - INFO - Fetching the api Response of http://nspuatapi.bidgely.com/entities/pilot/40003/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438
+2022-06-10 20:18:23,291 GetSpecificDetails - INFO - The s3BucketName=bidgely-nspres-uat

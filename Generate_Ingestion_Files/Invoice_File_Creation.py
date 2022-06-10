@@ -2,7 +2,7 @@ from Generate_Ingestion_Files.Ingestion_File_Type import IngestionFileType
 from Properties_Fetching.Get_Specific_Details import GetSpecificDetails
 
 class InvoiceFile:
-    invoice_file_prefix = 'USERENROLL_D_'
+    invoice_file_prefix = 'INVOICE_'
     Ingestion_file_type = IngestionFileType.InvoiceFile
     path_to_create_files = "/Users/maheshreddym/Documents/GitHub/Hackathon/Phantoms/Ingestion_txt_files_generated"
 
