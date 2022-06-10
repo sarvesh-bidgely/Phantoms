@@ -76,12 +76,10 @@ class GetSpecificDetails:
         for item in pilot_configs:
             if item.get("key").casefold()==delimiter_config.casefold():
                 delimiter_config_val=str(item.get("val")).replace("\\","")
-                self.log.info(f"The Delimiter={}")
-                return(str(item.get("val")).replace("\\",""))
+                self.log.info(f"The Delimiter={delimiter_config_val}")
+                return delimiter_config_val
 
-
-
-if __name__ == '__main__':
-    d={"url":"http://naapi2.bidgely.com","pilotid":str(40003),"access_token":"595b8e91-3753-4826-9a46-bbd9d74b3f65","uuid":"7c2b7a79-ec13-497b-9c4d-a3c5fe302264"}
-    f=GetSpecificDetails()
-    print (f.Get_Delimiter(d,IngestionFileType.InvoiceFile))
+# if __name__ == '__main__':
+#     d={"url":"http://naapi2.bidgely.com","pilotid":str(40003),"access_token":"595b8e91-3753-4826-9a46-bbd9d74b3f65","uuid":"7c2b7a79-ec13-497b-9c4d-a3c5fe302264"}
+#     f=GetSpecificDetails()
+#     print (f.Get_Delimiter(d,IngestionFileType.InvoiceFile))
