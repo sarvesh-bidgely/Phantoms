@@ -4,13 +4,15 @@ from Properties_Fetching.Get_Specific_Details import GetSpecificDetails
 class EnrollmentFile:
     enrollment_file_prefix = 'USERENROLL_D_'
     Ingestion_file_type = IngestionFileType.EnrollmentFile
-    path_to_create_files = "/Users/maheshreddym/Documents/GitHub/Hackathon/Phantoms/Ingestion_txt_files_generated"
+    path_to_create_files = "/Users/sarveshkulkarni/Sites/nsp/"
 
-    def __init__(self,Env_Variables):
+    def __init__(self,Env_Variables,IngestionFileType):
         self.Env_Variables=Env_Variables
+        self.IngestionFileType =  IngestionFileType
+
 
     def Create_File(self):
-        delimiter=GetSpecificDetails.Get_Delimiter(self.Env_Variables,Ingestion_file_type)
+        delimiter=GetSpecificDetails.Get_Delimiter(self.Env_Variables,self.Ingestion_file_type)
         timestamp = datetime.now().strftime("%Y_%m_%d-%I%M%S")
         try:
             enrollment_file = open(path_to_create_files + enrollment_file_prefix + timestamp + '.txt', 'w+')
@@ -21,6 +23,10 @@ class EnrollmentFile:
 
 
 
-# if __name__ == '__main__':
-#     p=IngestionFileDelimiterConfigMapping(IngestionFileType.EnrollmentFile)
-#     print(IngestionFileDelimiterConfigMapping(IngestionFileType.EnrollmentFile).GetFileMappingConfig())
+if __name__ == '__main__':
+    obj_dic = {
+        "url": 'https://nspuatapi.bidgely.com',
+        "pilotid": '40003',
+        "access_token": '56b02db5-b83c-4c5c-b75d-3b6eaee03438'
+    }
+    myobj = EnrollmentFile(obj_dic, IngestionFileType)
