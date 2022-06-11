@@ -7,6 +7,7 @@ from Generate_Ingestion_Files.Ingestion_File_Type import IngestionFileType
 from Properties_Fetching.Get_Specific_Details import GetSpecificDetails
 from Generate_Ingestion_Files.Get_Samplefile_aws_Bucket import FetchSampleAwsBucket
 from Data_Ingestion.IngestFile import Ingestion
+from Generate_Ingestion_Files.Rawdata_File_Creation import RawDataFile
 import uuid
 import string
 import random
@@ -78,7 +79,7 @@ class EnrollmentFile:
         enrollment_file_ingest.write(self.row_string)
         enrollment_file_ingest.close()
         ingest_object = Ingestion(Ingestion_file_name, bucket, Ingestion_file_path).uploadtos3bucket()
-
+        RawDataFile(enrollment_file_row_explode[index_accountid]).Create_File()
         self.log.info(f"After updating the values, writting back to file {self.row_string}")
 
     def random_char(num):

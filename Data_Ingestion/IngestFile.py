@@ -5,11 +5,13 @@ import requests
 import sys
 import io
 import subprocess
+import logging
 import os
 
 class Ingestion:
 
     def __init__(self, filename,bucket,filepath):
+        self.log = logging.getLogger(self.__class__.__name__)
         self.BucketName = 's3://' + bucket
         self.Ingestion_file_name = filename
         self.Ingestion_file_path = filepath
