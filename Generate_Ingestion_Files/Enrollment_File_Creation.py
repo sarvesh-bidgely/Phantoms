@@ -54,6 +54,8 @@ class EnrollmentFile:
         enrollment_file_row_explode =  enrollment_file_row_list[0].split(",")[:-1]
         enrollment_file_columns = GetSpecificDetails().Get_Data_columns(self.Env_Variables)
 
+        self.log.info(f"Created list from the aws file {enrollment_file_row_explode}")
+
         index_customerid = enrollment_file_columns.index(EnrollementColumnsToUpdate.customer_id.value)
         index_accountid = enrollment_file_columns.index(EnrollementColumnsToUpdate.account_id.value)
         index_premiseid = enrollment_file_columns.index(EnrollementColumnsToUpdate.premise_id.value)
@@ -70,35 +72,38 @@ class EnrollmentFile:
 
         for element in enrollment_file_row_explode:
             self.row_string = self.row_string + element + '|'
+
+        self.log.info(f"After updating the values, writting back to file {self.row_string}")
+
         enrollment_file_ingest.write(self.row_string)
         enrollment_file_ingest.close()
-        print('bucket', bucket)
         ingest_object = Ingestion(Ingestion_file_name, bucket, Ingestion_file_path).uploadtos3bucket()
-        #ingest_object.uploadtos3bucket(self)
+
+        self.log.info(f"After updating the values, writting back to file {self.row_string}")
 
     def random_char(num):
         return ''.join(random.choice(string.ascii_letters) for _ in range(num))
 
     def buildandUpdateCustomerId(self, list_to_update, position):
-        customerid = str(uuid.uuid1())
-        list_to_update[position] = customerid[0:8]
+        self.customerid =random.randint(11111111, 99999999)
+        list_to_update[position] = self.customerid
 
     def buildandUpdateAccountId(self, list_to_update, position):
-        accountid = str(uuid.uuid1())
-        list_to_update[position] = accountid[0:8]
+        self.accountid = random.randint(11111111, 99999999)
+        list_to_update[position] = self.accountid
 
     def buildandUpdatePremiseId(self, list_to_update, position):
-        premiseid = str(uuid.uuid1())
-        list_to_update[position] = premiseid[0:5]
+        self.premiseid = random.randint(11111, 99999)
+        list_to_update[position] = self.premiseid
 
     def buildandUpdateEmailId(self, list_to_update, position):
-        list_to_update[position] = 'TestUser_Resi_' + self.timestamp + "@gmail.com"
+        list_to_update[position] = 'TestUser_Resi_' + self.accountid + "@gmail.com"
 
     def buildandUpdateFirstName(self, list_to_update, position):
-        list_to_update[position] = 'Test User_' + self.timestamp
+        list_to_update[position] = 'Test User_' + self.accountid
 
     def buildandUpdateLastName(self, list_to_update, position):
-        list_to_update[position] = 'Test User' + self.timestamp
+        list_to_update[position] = 'Test User' + self.premiseid
 
 if __name__ == '__main__':
     d = {
