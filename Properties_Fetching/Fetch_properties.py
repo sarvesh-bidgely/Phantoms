@@ -4,7 +4,7 @@ from Properties_Fetching import Fetch_Api_Response
 from Properties_Fetching import Property_Types_Enum
 
 class FetchProperties:
-    def __init__(self,url,pilotid,access_token,property_type,uuid="",):
+    def __init__(self,url,pilotid,access_token,property_type,uuid="",PartnerId=""):
         self.log = logging.getLogger(self.__class__.__name__)
         self.log.info(f"Inside the Constructor of FetchProperties")
         self.log.info(f"The parameters are url={url}, pilotid={pilotid}, access_token={access_token},uuid={uuid},property_type={property_type}")
@@ -13,11 +13,13 @@ class FetchProperties:
         self.access_token=access_token
         self.property_type=property_type
         self.uuid=uuid
+        self.PartnerId=PartnerId
 
     def GetUrls(self):
         switcher = {
             Property_Types_Enum.PropertyTypes.UserDetails: self.url+"/v2.0/users/"+self.uuid,
-            Property_Types_Enum.PropertyTypes.PilotConfigs: self.url+"/entities/pilot/"+self.pilotid+"/configs"
+            Property_Types_Enum.PropertyTypes.PilotConfigs: self.url+"/entities/pilot/"+self.pilotid+"/configs",
+            Property_Types_Enum.PropertyTypes.UsersOnPartnerId: self.url+"/v2.0/users?"
         }
         self.log.info(f"In the Function GetUrls and URl = {switcher.get(self.property_type,None)}")
         return switcher.get(self.property_type,None)
@@ -25,7 +27,8 @@ class FetchProperties:
     def GetParams(self):
         switcher = {
             Property_Types_Enum.PropertyTypes.UserDetails: {"access_token":self.access_token},
-            Property_Types_Enum.PropertyTypes.PilotConfigs: {"access_token":self.access_token}
+            Property_Types_Enum.PropertyTypes.PilotConfigs: {"access_token":self.access_token},
+            Property_Types_Enum.PropertyTypes.UsersOnPartnerId: {"access_token": self.access_token, "partnerUserId":self.PartnerId}
         }
         self.log.info(f"In the Function GetParams and Params = {switcher.get(self.property_type,None)}")
         return switcher.get(self.property_type,None)

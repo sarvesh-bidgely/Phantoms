@@ -27,6 +27,22 @@ class GetSpecificDetails:
         pilot_configs=self.fetch_prop.GetProperties()
         return pilot_configs
 
+    def Get_Users_On_Partner_id(self,Env_Variables):
+        self.log.info(f"Into the Function Get_Users_On_Partner_id for Env_Variables={Env_Variables}")
+        try:
+            url=Env_Variables["url"]
+            pilotid=Env_Variables["pilotid"]
+            access_token=Env_Variables["access_token"]
+            property_type=Property_Types_Enum.PropertyTypes.UsersOnPartnerId
+            uuid = Env_Variables.get("uuid", "")
+            Partnerid=Env_Variables["PartnerID"]
+            self.fetch_prop=Fetch_properties.FetchProperties(url, pilotid, access_token, property_type, uuid, Partnerid)
+        except KeyError:
+            raise KeyError(f"The keys passed in the dict {Env_Variables} is missing the expeceted keys")
+
+        users_details=self.fetch_prop.GetProperties().get("payload", None)
+        return users_details
+
     def Get_User_details(self,Env_Variables):
         self.log.info(f"Into the Function Get_User_details for Env_Variables={Env_Variables}")
         try:

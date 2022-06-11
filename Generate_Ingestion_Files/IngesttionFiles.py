@@ -6,6 +6,7 @@ from os import listdir
 from os.path import isfile, join
 import json
 import sys
+
 from Properties_Fetching import Get_Specific_Details
 
 from datetime import datetime

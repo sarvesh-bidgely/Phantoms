@@ -41,19 +41,34 @@ class EnrollmentFile:
         self.log.info(f"The file name for the ingestion of Enrollment file = {enrollment_file_ingest}")
 
         #Get the sample file from Aws
-        aws_obj=FetchSampleAwsBucket(bucket, EnrollmentFile.enrollment_file_prefix)
+        aws_obj=FetchSampleAwsBucket(bucket, self.enrollment_file_prefix, self.Env_Variables, self.Ingestion_file_type)
 
         #The Aws file will be saved into the folder Aws_Files and returns us the FileName
-        #enrollment_file_aws = aws_obj.GetFile()
-        enrollment_file_aws="USERENROLL_D_202201281215_015282769457700148513.txt"
+        enrollment_file_aws = aws_obj.GetFile()
+        #Remove
+        #enrollment_file_aws="USERENROLL_D_202201281215_015282769457700148513.txt"
 
         #parse the date from the file by reading one record and convert it into a list for easy updating of values
         enrollment_file_aws = self.AWS_enrollement_file+enrollment_file_aws
-        enrollment_file = open(enrollment_file_aws, 'r')
-        enrollment_file_row = [enrollment_file.readline()[1:]]
-        enrollment_file_row_list = [item.replace("|", ",") for item in enrollment_file_row]
-        enrollment_file_row_explode =  enrollment_file_row_list[0].split(",")[:-1]
+
+        #enrollment_file = open(enrollment_file_aws, 'r')
+
+        enrollment_file_row=[]
+        #enrollment_file_row = [enrollment_file.readline()[1:]]
+        with open(enrollment_file_aws, 'r') as f:
+            for i, x in enumerate(f):
+                if i==0:
+                    enrollment_file_row=x.split(delimiter)
+                    del enrollment_file_row[-1]
+                elif i>0:
+                    break
+
+        #enrollment_file_row_list = [item.replace("|", ",") for item in enrollment_file_row]
+
+        enrollment_file_row_explode=enrollment_file_row
+        print(enrollment_file_row_explode)
         enrollment_file_columns = GetSpecificDetails().Get_Data_columns(self.Env_Variables)
+        print(enrollment_file_columns)
 
         self.log.info(f"Created list from the aws file {enrollment_file_row_explode}")
 
@@ -72,7 +87,7 @@ class EnrollmentFile:
         self.buildandUpdateLastName(enrollment_file_row_explode, index_lastname)
 
         for element in enrollment_file_row_explode:
-            self.row_string = self.row_string + element + '|'
+            self.row_string = self.row_string + str(element) + '|'
 
         self.log.info(f"After updating the values, writting back to file {self.row_string}")
 
@@ -98,18 +113,18 @@ class EnrollmentFile:
         list_to_update[position] = self.premiseid
 
     def buildandUpdateEmailId(self, list_to_update, position):
-        list_to_update[position] = 'TestUser_Resi_' + self.accountid + "@gmail.com"
+        list_to_update[position] = 'TestUser_Resi_' + str(self.accountid) + "@gmail.com"
 
     def buildandUpdateFirstName(self, list_to_update, position):
-        list_to_update[position] = 'Test User_' + self.accountid
+        list_to_update[position] = 'Test User_' + str(self.accountid)
 
     def buildandUpdateLastName(self, list_to_update, position):
-        list_to_update[position] = 'Test User' + self.premiseid
+        list_to_update[position] = 'Test User' + str(self.premiseid)
 
 if __name__ == '__main__':
     d = {
         "url": "http://nonprodqaapi.bidgely.com",
-        "pilotid": str(40003),
+        "pilotid": str(10046),
         "access_token": "bb9d8b3f-a740-4631-b634-d2b6c3949298",
         "uuid": "0d06ce34-c4c5-439e-94ab-a622c03dfaf3"
     }
