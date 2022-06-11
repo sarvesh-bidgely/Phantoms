@@ -17,7 +17,7 @@ class EnrollmentFile:
     row_string = ""
     Ingestion_file_type = IngestionFileType.EnrollmentFile
     Ingestion_file_path = os.path.join(os.getcwd(),"../Ingestion_txt_files_generated")
-    AWS_enrollement_file = os.path.join(os.getcwd(),"../aws_file_templates")
+    AWS_enrollement_file = os.path.join(os.getcwd(),"../Aws_Files/")
 
     def __init__(self,Env_Variables):
         self.log = logging.getLogger(self.__class__.__name__)
@@ -29,8 +29,10 @@ class EnrollmentFile:
 
         timestamp = datetime.now().strftime("%Y_%m_%d-%I%M%S")
         try:
-            Ingestion_file_name = EnrollmentFile.Ingestion_file_path+"/"+EnrollmentFile.enrollment_file_prefix+timestamp+'.txt'
-            enrollment_file_ingest = open(Ingestion_file_name, 'w+')
+            Ingestion_file_name = EnrollmentFile.enrollment_file_prefix+timestamp+'.txt'
+            Ingestion_file_path = EnrollmentFile.Ingestion_file_path+"/"+EnrollmentFile.enrollment_file_prefix+timestamp+'.txt'
+            print(f"Ingestion_file_name = {Ingestion_file_name},  Ingestion_file_path = {Ingestion_file_path}")
+            enrollment_file_ingest = open(Ingestion_file_path, 'w+')
         except Exception as error:
             print("Error while reading file : {}".format(error))
             raise
@@ -38,13 +40,14 @@ class EnrollmentFile:
         self.log.info(f"The file name for the ingestion of Enrollment file = {enrollment_file_ingest}")
 
         #Get the sample file from Aws
-        aws_obj=FetchSampleAwsBucket(bucket, EnrollmentFile.Ingestion_file_type, EnrollmentFile.enrollment_file_prefix)
+        aws_obj=FetchSampleAwsBucket(bucket, EnrollmentFile.enrollment_file_prefix)
 
         #The Aws file will be saved into the folder Aws_Files and returns us the FileName
         #enrollment_file_aws = aws_obj.GetFile()
+        enrollment_file_aws="USERENROLL_D_202201281215_015282769457700148513.txt"
 
         #parse the date from the file by reading one record and convert it into a list for easy updating of values
-        enrollment_file_aws = self.AWS_enrollement_file+'/USERENROLL_D_202205272120_01.txt'
+        enrollment_file_aws = self.AWS_enrollement_file+enrollment_file_aws
         enrollment_file = open(enrollment_file_aws, 'r')
         enrollment_file_row = [enrollment_file.readline()[1:]]
         enrollment_file_row_list = [item.replace("|", ",") for item in enrollment_file_row]
@@ -70,7 +73,7 @@ class EnrollmentFile:
         enrollment_file_ingest.write(self.row_string)
         enrollment_file_ingest.close()
         print('bucket', bucket)
-        ingest_object = Ingestion(Ingestion_file_name, bucket).uploadtos3bucket()
+        ingest_object = Ingestion(Ingestion_file_name, bucket, Ingestion_file_path).uploadtos3bucket()
         #ingest_object.uploadtos3bucket(self)
 
     def random_char(num):

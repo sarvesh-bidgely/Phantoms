@@ -24,6 +24,7 @@ class FetchSampleAwsBucket:
             self.log.info(f"The Latest File name = {filename}, Full Aws Details = {LatestFile}")
             print(filename,LatestFile)
             self.DowloadFile(filename)
+            return str(filename)
         else:
             raise Exception(f"No files available with the file format {self.FilePrefix} to download from the S3 {self.BucketName}")
 

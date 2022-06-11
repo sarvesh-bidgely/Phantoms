@@ -9,13 +9,15 @@ import os
 
 class Ingestion:
 
-    def __init__(self, filename,bucket):
+    def __init__(self, filename,bucket,filepath):
         self.BucketName = 's3://' + bucket
         self.Ingestion_file_name = filename
+        self.Ingestion_file_path = filepath
 
     def uploadtos3bucket(self):
-        print('file_path', self.Ingestion_file_name)
+        print(self.BucketName,self.Ingestion_file_name,self.Ingestion_file_path)
+        cmd='aws '+'s3 '+'cp '+self.Ingestion_file_path+" "+self.BucketName+" --metadata utility_file_name="+self.Ingestion_file_name
         try:
-            subprocess.call(['aws', 's3', 'cp', self.Ingestion_file_name, self.BucketName])
-        except subprocess.CalledProcessError as e:
-            raise RuntimeError("command '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+            os.system(cmd)
+        except Exception as e:
+            raise RuntimeError(f"command '{cmd}' return with error {e}")
