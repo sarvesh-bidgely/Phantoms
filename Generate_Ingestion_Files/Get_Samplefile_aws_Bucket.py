@@ -1,3 +1,5 @@
+import boto3
+
 from Generate_Ingestion_Files.Ingestion_File_Type import IngestionFileType
 
 class FetchSampleAwsBucket:
@@ -7,7 +9,10 @@ class FetchSampleAwsBucket:
         self.FilePrefix=prefix
 
     def GetFile(self):
-        return("awsfile_name"+str(self.FileType)+self.FilePrefix)
+        client = boto3.client('s3')
+
+        response = client.list_buckets()
+        print(response)
 
 
 

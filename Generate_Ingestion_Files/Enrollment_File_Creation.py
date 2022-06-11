@@ -35,7 +35,7 @@ class EnrollmentFile:
 
         #The Aws file will be saved into the folder Aws_Files and returns us the FileName
         enrollment_file_aws = aws_obj.GetFile()
-
+        enrollment_file_aws =
         self.log.info(f"The FileName sameple Reffered for creating ingestion file = {enrollment_file_aws} ")
 
         #Logic to fetch the awsfile stored in the path and process creating the ingestion file
