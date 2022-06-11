@@ -73,12 +73,6 @@ class EnrollmentFile:
         ingest_object = Ingestion(Ingestion_file_name, bucket).uploadtos3bucket()
         #ingest_object.uploadtos3bucket(self)
 
-
-        self.log.info(f"The FileName sameple Reffered for creating ingestion file = {enrollment_file_aws} ")
-
-        #Logic to fetch the awsfile stored in the path and process creating the ingestion file
-        #Ingestion file created has to be stored in the path Ingestion_txt_files_generated
-
     def random_char(num):
         return ''.join(random.choice(string.ascii_letters) for _ in range(num))
 

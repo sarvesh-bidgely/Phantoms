@@ -1,12 +1,12 @@
-2022-06-10 20:18:22,420 GetSpecificDetails - INFO - Into the func GetSpecificDetails
-2022-06-10 20:18:22,421 GetSpecificDetails - INFO - Into the Function S3BucketName for Env_Variables={'url': 'http://nspuatapi.bidgely.com', 'pilotid': '40003', 'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
-2022-06-10 20:18:22,421 GetSpecificDetails - INFO - Into the Function Pilot_Configs for Env_Variables={'url': 'http://nspuatapi.bidgely.com', 'pilotid': '40003', 'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
-2022-06-10 20:18:22,422 FetchProperties - INFO - Inside the Constructor of FetchProperties
-2022-06-10 20:18:22,422 FetchProperties - INFO - The parameters are url=http://nspuatapi.bidgely.com, pilotid=40003, access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438,uuid=7c2b7a79-ec13-497b-9c4d-a3c5fe302264,property_type=PropertyTypes.PilotConfigs
-2022-06-10 20:18:22,423 FetchProperties - INFO - In the Function GetUrls and URl = http://nspuatapi.bidgely.com/entities/pilot/40003/configs
-2022-06-10 20:18:22,423 FetchProperties - INFO - In the Function GetParams and Params = {'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
-2022-06-10 20:18:22,423 FetchApiResponse - INFO - Inside the Constructor Function of FetchApiResponse and Args are url=http://nspuatapi.bidgely.com/entities/pilot/40003/configs, params={'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
-2022-06-10 20:18:22,459 urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): nspuatapi.bidgely.com:80
-2022-06-10 20:18:22,996 urllib3.connectionpool - DEBUG - http://nspuatapi.bidgely.com:80 "GET /entities/pilot/40003/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438 HTTP/1.1" 200 None
-2022-06-10 20:18:23,273 FetchApiResponse - INFO - Fetching the api Response of http://nspuatapi.bidgely.com/entities/pilot/40003/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438
-2022-06-10 20:18:23,291 GetSpecificDetails - INFO - The s3BucketName=bidgely-nspres-uat
+2022-06-11 13:31:06,839 GetSpecificDetails - INFO - Into the func GetSpecificDetails
+2022-06-11 13:31:06,839 GetSpecificDetails - INFO - Into the Function S3BucketName for Env_Variables={'url': 'http://aurorauatapi.bidgely.com', 'pilotid': '10058', 'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
+2022-06-11 13:31:06,841 GetSpecificDetails - INFO - Into the Function Pilot_Configs for Env_Variables={'url': 'http://aurorauatapi.bidgely.com', 'pilotid': '10058', 'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438', 'uuid': '7c2b7a79-ec13-497b-9c4d-a3c5fe302264'}
+2022-06-11 13:31:06,841 FetchProperties - INFO - Inside the Constructor of FetchProperties
+2022-06-11 13:31:06,842 FetchProperties - INFO - The parameters are url=http://aurorauatapi.bidgely.com, pilotid=10058, access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438,uuid=7c2b7a79-ec13-497b-9c4d-a3c5fe302264,property_type=PropertyTypes.PilotConfigs
+2022-06-11 13:31:06,842 FetchProperties - INFO - In the Function GetUrls and URl = http://aurorauatapi.bidgely.com/entities/pilot/10058/configs
+2022-06-11 13:31:06,843 FetchProperties - INFO - In the Function GetParams and Params = {'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
+2022-06-11 13:31:06,844 FetchApiResponse - INFO - Inside the Constructor Function of FetchApiResponse and Args are url=http://aurorauatapi.bidgely.com/entities/pilot/10058/configs, params={'access_token': '56b02db5-b83c-4c5c-b75d-3b6eaee03438'}
+2022-06-11 13:31:06,879 urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): aurorauatapi.bidgely.com:80
+2022-06-11 13:31:07,417 urllib3.connectionpool - DEBUG - http://aurorauatapi.bidgely.com:80 "GET /entities/pilot/10058/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438 HTTP/1.1" 200 None
+2022-06-11 13:31:07,652 FetchApiResponse - INFO - Fetching the api Response of http://aurorauatapi.bidgely.com/entities/pilot/10058/configs?access_token=56b02db5-b83c-4c5c-b75d-3b6eaee03438
+2022-06-11 13:31:07,663 GetSpecificDetails - INFO - The s3BucketName=bidgely-aurora-uat
